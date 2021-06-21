@@ -1,6 +1,5 @@
 package com.hyun.springboot.web;
 
-import com.hyun.springboot.config.auth.LoginUser;
 import com.hyun.springboot.config.auth.dto.SessionUser;
 import com.hyun.springboot.service.posts.PostsService;
 import com.hyun.springboot.web.dto.PostsResponseDto;
@@ -34,16 +33,12 @@ public class IndexController {
     }
 
     @GetMapping("/")
-    public String index(Model model, @LoginUser SessionUser user){
+    public String index(Model model){
         model.addAttribute("posts",postsService.findAllDesc());
-        //LoginUser 어노테이션 추가로 사용 안하는 코드
-        //SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
         if(user!=null){
             model.addAttribute("userName",user.getName());
-            System.out.println("userName : " + user.getName());
-            System.out.println(model);
         }
-
         return "index";
     }
 
