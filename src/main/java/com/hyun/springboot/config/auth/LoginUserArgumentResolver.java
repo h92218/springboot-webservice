@@ -1,9 +1,6 @@
 package com.hyun.springboot.config.auth;
 
-<<<<<<< HEAD
-=======
-import com.fasterxml.jackson.databind.DatabindContext;
->>>>>>> origin/master
+
 import com.hyun.springboot.config.auth.dto.SessionUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.MethodParameter;
@@ -35,9 +32,5 @@ public class LoginUserArgumentResolver implements HandlerMethodArgumentResolver 
                                   WebDataBinderFactory binderFactory) throws Exception {
         return httpSession.getAttribute("user");
     }
-<<<<<<< HEAD
 
-
-=======
->>>>>>> origin/master
 }

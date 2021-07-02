@@ -13,13 +13,11 @@ import java.util.List;
 public class WebConfig implements WebMvcConfigurer {
     private final LoginUserArgumentResolver loginUserArgumentResolver;
 
-<<<<<<< HEAD
+
     @Override
-    public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers){
         //HandlerMethodArgumentResolver 는 항상 WebMvcConfigurer의 addArgumentResolvers()를 통해 추가해야 함.
-=======
     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers){
->>>>>>> origin/master
+
         argumentResolvers.add(loginUserArgumentResolver);
     }
 }
