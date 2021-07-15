@@ -44,4 +44,11 @@ public class IndexController {
         return "index";
     }
 
+    @GetMapping("/vue")
+    public String vue(){
+        System.out.println(">>>>>>>>>>>>>>>>>call vue");
+
+        return "vue/index";
+    }
+
 }

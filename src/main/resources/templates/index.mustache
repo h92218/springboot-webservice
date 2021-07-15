@@ -6,8 +6,8 @@
         <div class=""col-md-6>
             <a href="/posts/save" role="button" class="btn btn-primary"> 글 등록</a>
             {{#userName}}
-               {{userName}}님 로그인
-            <a href="/logout" class="btn btn-info active" role="button">로그아웃</a>
+                {{userName}}님 로그인
+                <a href="/logout" class="btn btn-info active" role="button">로그아웃</a>
             {{/userName}}
             {{^userName}}
                 <a href="/oauth2/authorization/google" class="btn btn-success active" role="button"> Google Login</a>
@@ -33,9 +33,21 @@
                 <td>{{author}}</td>
                 <td>{{modifiedDate}}</td>
             </tr>
-            {{/posts}}
+        {{/posts}}
         </tbody>
 
     </table>
 </div>
+<div id="app">
+    {{message}}
+</div>
 {{>layout/footer}}
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el : '#app',
+        data : {
+            message : 'Hello Vue.js!'
+        }
+    });
+</script>
